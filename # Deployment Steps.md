@@ -13,7 +13,7 @@ The list of resources created by this Bicep Project are as follows : -
 
 Here's a rough diagram of the resources it creates
 
-![Diagram](./images/policy-monitor-diagram.png)
+![Diagram](./images/Diagram.png)
 
 ## Operations details
 
@@ -36,3 +36,21 @@ Fire the below command to create the resources using Bicep script
 
 > az deployment sub create --location WestUS --name PolicyAlertDeployment1 --template-file main.bicep --parameters main.parameters.json
 > az deployment sub create --location WestUS --name PolicyAlertDeployment2 --template-file main.eventgrid.bicep --parameters main.eventgrid.parameters.json
+
+### Trigger from Azure DevOps Pipelines
+
+1. Click on Azure Pipelines and then click on the Pipeline (Here it is **WFC-Bicep-PolicyMonitor-Deployment**)
+
+![Diagram](./images/Click_On_Pipelines.png)
+
+2. Click on **Run Pipeline** button on upper right corner 
+
+![Diagram](./images/Click_On_Run_Pipeline.png)
+
+3. Click on **Run** button. Ensure to change the branch to **feature/policy_alerts** (You can also click on **Variables** and change if required)
+
+![Diagram](./images/Click_On_Run_Button.png)
+
+4. Monitor the Progress of the Job
+
+![Diagram](./images/Monitor_The_Progress.png)

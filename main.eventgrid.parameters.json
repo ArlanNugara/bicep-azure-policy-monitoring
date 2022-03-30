@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "EventGridArray": {
+      "value": [
+        {
+          "client": "<Your Value here>",
+          "rgNameRef": "PolicyMonitor",
+          "tags": {
+            "Created By": "Arlan N",
+            "Customer": "<Your Value here>",
+            "Env": "<Your Value here>",
+            "Region": "<Your Value here>",
+            "App": "<Your Value here>",
+            "Cost Center": "<Your Value here>",
+            "Department": "<Your Value here>",
+            "Owner": "<Your Value here>",
+            "Policy": "<Your Value here>",
+            "Product": "<Your Value here>",
+            "SalesforceCSTID": "<Your Value here>",
+            "SLASeverity": "<Your Value here>",
+            "Stakeholders": "<Your Value here>",
+            "Tier": "<Your Value here>"
+          },
+          "topic": {
+            "name": "<Your Value here>",
+            "logAnalytics": {
+              "logStorageAccountNameRef": "<Your Value here>",
+              "logWorkSpaceNameRef": "<Your Value here>"
+            }
+          },
+          "subscriptions": {
+            "name": "<Your Value here>",
+            "functionAppNameRef": "<Your Value here>",
+            "functionName": "<Your Value here>"
+          }
+        }
+      ]
+    }
+  }
+}

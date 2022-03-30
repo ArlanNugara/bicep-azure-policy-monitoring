@@ -1,0 +1,130 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "policyMonitorData": {
+      "value": {
+        "client": "<Your Value here>",
+        "commonTagsForResources": {
+          "Created By": "Arlan N",
+          "Customer": "<Your Value here>",
+          "Env": "<Your Value here>",
+          "Region": "<Your Value here>",
+          "App": "<Your Value here>",
+          "Cost Center": "<Your Value here>",
+          "Department": "<Your Value here>",
+          "Owner": "<Your Value here>",
+          "Policy": "<Your Value here>",
+          "Product": "<Your Value here>",
+          "SalesforceCSTID": "<Your Value here>",
+          "SLASeverity": "<Your Value here>",
+          "Stakeholders": "<Your Value here>",
+          "Tier": "<Your Value here>"
+        },
+        "resourceGroupArray": [
+          {
+            "rgName": "<Your Value here>",
+            "rgLocation": "<Your Value here>",
+            "tags": {},
+            "functionAppArray": [
+              {
+                "name": "<Your Value here>",
+                "tags": {
+                  "App": "<Your Value here>"
+                },
+                "logAnalytics": {
+                  "logStorageAccountNameRef": "<Your Value here>",
+                  "logWorkSpaceNameRef": "<Your Value here>"
+                },
+                "storageAccountNameRef": "<Your Value here>",
+                "appServicePlanName": "<Your Value here>",
+                "appInsightsName": "<Your Value here>"
+              }
+            ],
+            "keyVaultArray": [
+              {
+                "name": "<Your Value here>",
+                "tags": {
+                  "App": "<Your Value here>"
+                },
+                "skuFamily": "<Your Value here>",
+                "skuName": "<Your Value here>",
+                "logAnalytics": {
+                  "logStorageAccountNameRef": "<Your Value here>",
+                  "logWorkSpaceNameRef": "<Your Value here>"
+                },
+                "secrects": [
+                  {
+                    "name": "<Your Value here>",
+                    "functionAppNameRef": "<Your Value here>"
+                  }
+                ]
+              }
+            ],
+            "logAnalyticsWorkspaceArray": [
+              {
+                "name": "<Your Value here>",
+                "sku": "<Your Value here>",
+                "retentionInDays": 90,
+                "dailyQuotaGb": 1,
+                "logAnalytics": {
+                  "logStorageAccountNameRef": "<Your Value here>"
+                },
+                "tags": {
+                  "App": "<Your Value here>",
+                  "Cost Center": "<Your Value here>",
+                  "Department": "<Your Value here>",
+                  "Owner": "<Your Value here>"
+                }
+              }
+            ],
+            "metricsArray": [
+              {
+                "name": "<Your Value here>",
+                "description": "<Your Value here>",
+                "tags": {
+                  "App": "<Your Value here>",
+                  "Cost Center": "<Your Value here>",
+                  "Department": "<Your Value here>",
+                  "Owner": "<Your Value here>"
+                },
+                "query": "PolicyInsights_CL\n| where event_type_s =~ \"Microsoft.PolicyInsights.PolicyStateCreated\" or event_type_s =~ \"Microsoft.PolicyInsights.PolicyStateChanged\"\n| where data_complianceState_s =~ \"NonCompliant\"\n| extend Time_Stamp=data_timestamp_t\n| extend Resource_Id = subject_s\n| extend Subscription_Id = data_subscriptionId_g\n| extend Compliance_state = data_complianceState_s\n| extend Policy_Definition = data_policyDefinitionId_s\n| extend Policy_Assignment = data_policyAssignmentId_s\n| extend Compliance_Reason_Code = data_complianceReasonCode_s\n| project Time_Stamp, Resource_Id, Subscription_Id, Policy_Assignment, Policy_Definition, Compliance_state, Compliance_Reason_Code",
+                "severity": 3,
+                "evaluationFrequency": "<Your Value here>",
+                "logWorkSpaceNameRef": "<Your Value here>",
+                "emailAction": {
+                  "name": "<Your Value here>",
+                  "emailId": "<Your Value here>"
+                }
+              }
+            ],
+            "storageAccountArray": [
+              {
+                "name": "<Your Value here>",
+                "skuName": "<Your Value here>",
+                "logAnalytics": {
+                  "logStorageAccountNameRef": "<Your Value here>",
+                  "logWorkSpaceNameRef": "<Your Value here>"
+                },
+                "tags": {
+                  "App": "<Your Value here>"
+                }
+              },
+              {
+                "name": "<Your Value here>",
+                "skuName": "<Your Value here>",
+                "logAnalytics": {
+                  "logStorageAccountNameRef": "<Your Value here>",
+                  "logWorkSpaceNameRef": "<Your Value here>"
+                },
+                "tags": {
+                  "App": "<Your Value here>"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
