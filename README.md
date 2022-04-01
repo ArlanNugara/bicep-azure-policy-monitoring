@@ -1,4 +1,6 @@
-# Deployment Steps
+# Overview
+
+This bicep code is developed to automate deployment of a Azure Non-Compliance resource monitoring solution.
 
 ## Resources details
 
@@ -6,8 +8,11 @@ The list of resources created by this Bicep Project are as follows : -
 
 - Log Analytics Workspace
 - Event Grid Topic and Subscription
-- Function App
+- Function App (Triggered Manually using AZ CLI or from VSCode)
 - Azure Monitor Alert Rule
+- Storage Account
+- Azure Monitor Metrics
+- Key Vault
 
 ## Diagram
 
