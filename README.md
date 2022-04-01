@@ -164,4 +164,5 @@ Hit the command **az login** from Comamnd Prompt or Terminal depending upon your
 Fire the below command to create the resources using Bicep script
 
 > az deployment sub create --location WestUS --name PolicyAlertDeployment1 --template-file main.bicep --parameters main.parameters.json
+
 > az deployment sub create --location WestUS --name PolicyAlertDeployment2 --template-file main.eventgrid.bicep --parameters main.eventgrid.parameters.json
