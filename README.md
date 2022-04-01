@@ -165,4 +165,6 @@ Fire the below command to create the resources using Bicep script
 
 > az deployment sub create --location WestUS --name PolicyAlertDeployment1 --template-file main.bicep --parameters main.parameters.json
 
+> <Deploy the Function App here>
+
 > az deployment sub create --location WestUS --name PolicyAlertDeployment2 --template-file main.eventgrid.bicep --parameters main.eventgrid.parameters.json
