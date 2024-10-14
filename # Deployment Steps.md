@@ -9,12 +9,6 @@ The list of resources created by this Bicep Project are as follows : -
 - Function App
 - Azure Monitor Alert Rule
 
-## Diagram
-
-Here's a rough diagram of the resources it creates
-
-![Diagram](./images/Diagram.png)
-
 ## Operations details
 
 The Bicep project is configured to work on the following principle
@@ -39,18 +33,10 @@ Fire the below command to create the resources using Bicep script
 
 ### Trigger from Azure DevOps Pipelines
 
-1. Click on Azure Pipelines and then click on the Pipeline (Here it is **WFC-Bicep-PolicyMonitor-Deployment**)
-
-![Diagram](./images/Click_On_Pipelines.png)
+1. Click on Azure Pipelines and then click on the Pipeline
 
 2. Click on **Run Pipeline** button on upper right corner 
 
-![Diagram](./images/Click_On_Run_Pipeline.png)
-
 3. Click on **Run** button. Ensure to change the branch to **feature/policy_alerts** (You can also click on **Variables** and change if required)
 
-![Diagram](./images/Click_On_Run_Button.png)
-
 4. Monitor the Progress of the Job
-
-![Diagram](./images/Monitor_The_Progress.png)
